@@ -34,30 +34,17 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
-                <executions>
-                    <execution>
-                        <!-- id (придумываем сами) -->
-                        <id>prepare-agent</id>
-                        <goals>
-                        <!-- какую цель выполняем (берём из справки) -->
-                        <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                    <!-- id (придумываем сами) -->
-                    <id>report</id>
-                        <goals>
-                    <!-- какую цель выполняем (берём из справки) -->
-                    <goal>report</goal>
-                        </goals>
-                </execution>
-                </executions>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.1.3</version>
+                <dependencies>
+                    <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.1.4</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
